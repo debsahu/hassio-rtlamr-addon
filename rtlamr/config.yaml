@@ -4,7 +4,7 @@ version: 1.0.0
 slug: rtlamr_collect
 description: RTLAMR and RTL-COLLECT
 url: https://github.com/debsahu/hassio-rtlamr-addon
-startup: aplication
+startup: application
 ingress: false
 panel_icon: mdi:radio-tower
 panel_title: RTLAMR & RTL-COLLECT
