@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bashio
+
+declare -a options
+declare RTL_TCP_SERVER
+RTL_TCP_SERVER = $(bashio::config 'RTL_TCP_SERVER')
+
+while read LINE; do export "$LINE"; done < /config/rtlamr-collect.env
+
+rtlamr -server=${RTL_TCP_SERVER} | rtlamr-collect
