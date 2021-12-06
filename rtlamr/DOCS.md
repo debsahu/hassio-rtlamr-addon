@@ -48,7 +48,6 @@ $ sudo systemctl start rtl_tcp.service
 Example Add-on configuration:
 
 ```yaml
-RTLAMR_FORMAT: json
 RTLAMR_MSGTYPE: r900
 RTLAMR_CENTERFREQ: 917000000
 COLLECT_INFLUXDB_HOSTNAME: http://a0d7b954-influxdb:8086/

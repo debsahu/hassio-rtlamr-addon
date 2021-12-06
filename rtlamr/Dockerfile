@@ -107,3 +107,5 @@ WORKDIR $GOPATH
 
 RUN go get github.com/bemasher/rtlamr \
     && go get github.com/bemasher/rtlamr-collect
+
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
