@@ -4,10 +4,8 @@ declare -a options
 declare RTL_TCP_SERVER
 RTL_TCP_SERVER = $(bashio::config 'RTL_TCP_SERVER')
 
-while read LINE; do export "$LINE"; done < /config/rtlamr-collect.env
-
 bashio::log.info "Starting RTLAMR & RTL Collect"
 
-exec rtlamr -server=${RTL_TCP_SERVER} | rtlamr-collect
+exec while read LINE; do export "$LINE"; done < /config/rtlamr-collect.env | rtlamr -server=${RTL_TCP_SERVER} | rtlamr-collect
 
 Sleep 15

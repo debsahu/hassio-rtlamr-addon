@@ -23,9 +23,11 @@ COLLECT_INFLUXDB_BUCKET = $(bashio::config 'COLLECT_INFLUXDB_BUCKET')
 COLLECT_INFLUXDB_MEASUREMENT = $(bashio::config 'COLLECT_INFLUXDB_MEASUREMENT')
 COLLECT_STRICTIDM = $(bashio::config 'COLLECT_STRICTIDM')
 
+bashio::log.info "Seeing if /config/rtlamr-collect.env exists"
+
 if ! bashio::fs.file_exists "/config/rtlamr-collect.env"; then
-    echo -e "" > /config/rtlamr-collect.env
-    echo -e "RTLAMR_FORMAT=json\n" >> /config/rtlamr-collect.env
+    bashio::log.info "Creating /config/rtlamr-collect.env"
+    echo -e "RTLAMR_FORMAT=json\n" > /config/rtlamr-collect.env
     echo -e "RTLAMR_MSGTYPE=${RTLAMR_MSGTYPE}\n" >> /config/rtlamr-collect.env
     echo -e "RTLAMR_CENTERFREQ=${RTLAMR_CENTERFREQ}\n" >> /config/rtlamr-collect.env
     if bashio::config.has_value 'RTLAMR_FILTERID'; then
