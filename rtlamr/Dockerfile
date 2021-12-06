@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base:11.0.0
+ARG BUILD_FROM
 FROM $BUILD_FROM
 
 RUN apk add --no-cache ca-certificates

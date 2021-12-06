@@ -32,8 +32,8 @@ schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   RTLAMR_FORMAT: str
   RTLAMR_MSGTYPE: str
-  RTLAMR_CENTERFREQ: int
-  RTLAMR_FILTERID: []
+  RTLAMR_CENTERFREQ: match(^([0-9]{9})$)
+  RTLAMR_FILTERID: int
   COLLECT_INFLUXDB_HOSTNAME: url
   COLLECT_INFLUXDB_DATABASE: str
   COLLECT_INFLUXDB_TOKEN: str
