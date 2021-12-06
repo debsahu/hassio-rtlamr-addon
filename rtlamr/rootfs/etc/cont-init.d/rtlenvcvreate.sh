@@ -1,7 +1,6 @@
 #!/usr/bin/env bashio
 
 declare -a options
-declare RTLAMR_FORMAT
 declare RTLAMR_MSGTYPE
 declare RTLAMR_CENTERFREQ
 declare RTLAMR_FILTERID
@@ -13,7 +12,6 @@ declare COLLECT_INFLUXDB_BUCKET
 declare COLLECT_INFLUXDB_MEASUREMENT
 declare COLLECT_STRICTIDM
 
-RTLAMR_FORMAT = $(bashio::config 'RTLAMR_FORMAT')
 RTLAMR_MSGTYPE = $(bashio::config 'RTLAMR_MSGTYPE')
 RTLAMR_CENTERFREQ = $(bashio::config 'RTLAMR_CENTERFREQ')
 RTLAMR_FILTERID = $(bashio::config 'RTLAMR_FILTERID')
@@ -27,7 +25,7 @@ COLLECT_STRICTIDM = $(bashio::config 'COLLECT_STRICTIDM')
 
 if ! bashio::fs.file_exists "/config/rtlamr-collect.env"; then
     echo -e "" > /config/rtlamr-collect.env
-    echo -e "RTLAMR_FORMAT=${RTLAMR_FORMAT}\n" >> /config/rtlamr-collect.env
+    echo -e "RTLAMR_FORMAT=json\n" >> /config/rtlamr-collect.env
     echo -e "RTLAMR_MSGTYPE=${RTLAMR_MSGTYPE}\n" >> /config/rtlamr-collect.env
     echo -e "RTLAMR_CENTERFREQ=${RTLAMR_CENTERFREQ}\n" >> /config/rtlamr-collect.env
     if bashio::config.has_value 'RTLAMR_FILTERID'; then

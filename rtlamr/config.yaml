@@ -16,7 +16,6 @@ arch:
   - i386
 map: ["config:rw"]
 options:
-  RTLAMR_FORMAT: json
   RTLAMR_MSGTYPE: r900
   RTLAMR_CENTERFREQ: 917000000
   COLLECT_INFLUXDB_HOSTNAME: http://a0d7b954-influxdb:8086/
@@ -29,8 +28,7 @@ options:
   RTL_TCP_SERVER: 127.0.0.1:1234
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
-  RTLAMR_FORMAT: str
-  RTLAMR_MSGTYPE: str
+  RTLAMR_MSGTYPE: list(all|scm|scm+|idm|netidm|r900|r900bcd)
   RTLAMR_CENTERFREQ: match(^([0-9]{9})$)
   RTLAMR_FILTERID: int?
   COLLECT_INFLUXDB_HOSTNAME: url
