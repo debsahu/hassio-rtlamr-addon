@@ -108,19 +108,16 @@ WORKDIR $GOPATH
 RUN go get github.com/bemasher/rtlamr \
     && go get github.com/bemasher/rtlamr-collect
 
-# RUN apk add --no-cache musl-dev gcc make cmake pkgconf git libusb-dev
+RUN apk add --no-cache musl-dev gcc make cmake pkgconf git libusb-dev
 
-RUN apk add --no-cache --virtual build-deps alpine-sdk cmake git go libc-dev libusb-dev; \
-    git clone --single-branch git://git.osmocom.org/rtl-sdr.git /usr/local/rtl-sdr; \
-    mkdir -vp /usr/local/rtl-sdr/build; \
-    cd /usr/local/rtl-sdr/build; \
-    cmake ../ -DINSTALL_UDEV_RULES=ON -DDETACH_KERNEL_DRIVER=ON -DCMAKE_INSTALL_PREFIX:PATH=/usr/local; \
-    make; \
-    make install; \
-    apk del build-deps; \
-    apk add --no-cache libusb
+WORKDIR /usr/local/
+RUN git clone git://git.osmocom.org/rtl-sdr.git
 
-RUN echo "blacklist dvb_usb_rtl28xxu" >> /etc/modprobe.d/rtlsdr-blacklist.conf
+RUN mkdir /usr/local/rtl-sdr/build
+WORKDIR /usr/local/rtl-sdr/build
+RUN cmake ../ -DDETACH_KERNEL_DRIVER=ON
+RUN make
+RUN make install
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 

@@ -12,4 +12,4 @@ done
 
 exec /go/bin/rtlamr | /go/bin/rtlamr-collect
 
-sleep 15
+Sleep 15
