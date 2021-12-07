@@ -4,7 +4,7 @@ version: 1.0.0
 slug: rtlamr_collect
 description: RTLAMR and RTL-COLLECT
 url: https://github.com/debsahu/hassio-rtlamr-addon
-startup: application
+startup: services
 ingress: false
 panel_icon: mdi:radio-tower
 panel_title: RTLAMR & RTL-COLLECT
@@ -15,6 +15,7 @@ arch:
   - armhf
   - i386
 map: ["config:rw"]
+usb: true
 options:
   RTLAMR_MSGTYPE: r900
   RTLAMR_CENTERFREQ: 917000000
@@ -25,7 +26,6 @@ options:
   COLLECT_INFLUXDB_BUCKET: rtlamr
   COLLECT_INFLUXDB_MEASUREMENT: rtlamr
   COLLECT_STRICTIDM: 1
-  RTL_TCP_SERVER: 127.0.0.1:1234
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   RTLAMR_MSGTYPE: list(all|scm|scm+|idm|netidm|r900|r900bcd)
@@ -38,4 +38,3 @@ schema:
   COLLECT_INFLUXDB_BUCKET: str
   COLLECT_INFLUXDB_MEASUREMENT: str
   COLLECT_STRICTIDM: int
-  RTL_TCP_SERVER: match(^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]):[0-9]+$)

@@ -1,0 +1,11 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Run RTL-TCP
+# Add on
+# ==============================================================================
+
+bashio::log.info "Starting RTL TCP"
+
+exec /usr/local/bin/rtl_tcp
+
+sleep 15
