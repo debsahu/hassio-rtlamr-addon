@@ -6,6 +6,6 @@
 
 bashio::log.info "Starting RTL TCP"
 
-exec /usr/bin/rtl_tcp
+exec /usr/local/bin/rtl_tcp
 
-Sleep 15
+sleep 15
