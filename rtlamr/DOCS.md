@@ -13,7 +13,14 @@ $ sudo apt-get install rtl-sdr
 ```
 - Make sure that `lsmod | grep dvb` does not show anything or may require a reboot
 
-## 2. Run RTLAMR & RTLAMR-collect
+## 2. Run RTLAMR & RTLAMR-collect Add-on
+
+- Goto "Supervisor" -> "Add-ons Store" -> "Menu (top left)" -> "Repositories" -> "Add"
+- Add this add-on repository:
+
+```
+https://github.com/debsahu/hassio-rtlamr-addon
+```
 
 - Add appropiate values to config and run this add on
 
