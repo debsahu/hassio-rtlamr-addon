@@ -1,15 +1,11 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Run RTL-AMR
+# Run RTL-TCP
 # Add on
 # ==============================================================================
 
-bashio::log.info "Starting RTLAMR & RTL Collect"
+bashio::log.info "Starting RTL TCP"
 
-for line in $(cat '/config/rtlamr-collect.env'); do
-    export $line
-done
-
-exec /go/bin/rtlamr | /go/bin/rtlamr-collect
+exec /usr/bin/rtl_tcp
 
 Sleep 15
