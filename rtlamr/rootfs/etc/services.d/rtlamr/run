@@ -4,14 +4,15 @@
 # Add on
 # ==============================================================================
 
+# Allow rtl_tcp to start first
+sleep 10
+
+# Start RTL-AMR & RTL-COLLECT
 bashio::log.info "Starting RTLAMR & RTL Collect"
 
 for line in $(cat '/config/rtlamr-collect.env'); do
     export $line
 done
-
-# Allow rtl_tcp to start first
-sleep 10
 
 exec /go/bin/rtlamr | /go/bin/rtlamr-collect
 
