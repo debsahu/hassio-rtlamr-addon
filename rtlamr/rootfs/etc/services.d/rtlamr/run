@@ -10,6 +10,9 @@ for line in $(cat '/config/rtlamr-collect.env'); do
     export $line
 done
 
+# Allow rtl_tcp to start first
+sleep 10
+
 exec /go/bin/rtlamr | /go/bin/rtlamr-collect
 
 sleep 15
