@@ -1,6 +1,6 @@
 ---
 name: RTLAMR-RTLCOLLECT
-version: 1.0.0
+version: 1.0.1
 slug: rtlamr_collect
 description: RTLAMR and RTL-COLLECT
 url: https://github.com/debsahu/hassio-rtlamr-addon

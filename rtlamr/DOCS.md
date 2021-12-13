@@ -2,18 +2,18 @@
 
 A HASSIO addon to run [RTLAMR](https://github.com/bemasher/rtlamr) and [RTLAMR_COLLECT](https://github.com/bemasher/rtlamr-collect) on RTL-SDR dongles (RTL2832U). Idea is to read data from meters (water/gas/electric) and import data into InfluxDB database.
 
-## 1. Install RTL-SDR
+## 1. Plug RTL-SDR (RTL2832U) into USB
 
-- Follow instructions on [OSMOCOM](https://osmocom.org/projects/rtl-sdr/wiki/Rtl-sdr) to install manually
-- Install using apt-get
+- Plug RTL-SDR (RTL2832U) dongle into USB port
 
-```bash
-$ sudo apt-get update
-$ sudo apt-get install rtl-sdr
+## 2. Run RTLAMR & RTLAMR-collect Add-on
+
+- Goto "Supervisor" -> "Add-ons Store" -> "Menu (top left)" -> "Repositories" -> "Add"
+- Add this add-on repository:
+
 ```
-- Make sure that `lsmod | grep dvb` does not show anything or may require a reboot
-
-## 2. Run RTLAMR & RTLAMR-collect
+https://github.com/debsahu/hassio-rtlamr-addon
+```
 
 - Add appropiate values to config and run this add on
 
