@@ -15,8 +15,6 @@ arch:
   - armhf
   - i386
 map: ["config:rw"]
-host_network: true
-full_access: true
 usb: true
 options:
   RTLAMR_MSGTYPE: r900
