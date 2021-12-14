@@ -4,8 +4,8 @@
 # Add on
 # ==============================================================================
 
-# Allow rtl_tcp to start first
-sleep 10
+# Wait for rtl_tcp to become available
+bashio::net.wait_for 1234
 
 # Start RTL-AMR & RTL-COLLECT
 bashio::log.info "Starting RTLAMR & RTL Collect"
