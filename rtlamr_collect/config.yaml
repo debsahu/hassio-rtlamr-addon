@@ -1,5 +1,5 @@
 name: "RTLAMR_RTLCOLLECT"
-version: "1.0.3"
+version: "1.0.4"
 slug: "rtlamr_collect"
 description: "RTLAMR and RTL-COLLECT"
 url: "https://github.com/debsahu/hassio-rtlamr-addon"

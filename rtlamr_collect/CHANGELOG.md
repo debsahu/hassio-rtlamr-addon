@@ -1,3 +1,7 @@
+## 1.0.4
+
+- Updare permison to executable
+
 ## 1.0.3
 
 - Add an apparmor profile
