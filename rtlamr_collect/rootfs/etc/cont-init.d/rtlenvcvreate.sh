@@ -1,4 +1,4 @@
-#!/usr/bin/env bashio
+#!/usr/bin/with-contenv bashio
 
 declare -a options
 declare RTLAMR_MSGTYPE

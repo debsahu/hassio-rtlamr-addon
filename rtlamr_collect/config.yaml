@@ -1,30 +1,34 @@
----
-name: RTLAMR-RTLCOLLECT
-version: 1.0.2
-slug: rtlamr_collect
-description: RTLAMR and RTL-COLLECT
-url: https://github.com/debsahu/hassio-rtlamr-addon
+name: "RTLAMR_RTLCOLLECT"
+version: "1.0.3"
+slug: "rtlamr_collect"
+description: "RTLAMR and RTL-COLLECT"
+url: "https://github.com/debsahu/hassio-rtlamr-addon"
 startup: services
 ingress: false
 panel_icon: mdi:radio-tower
-panel_title: RTLAMR & RTL-COLLECT
+panel_title: "RTLAMR & RTL-COLLECT"
 arch:
   - aarch64
   - amd64
   - armv7
   - armhf
   - i386
-map: ["config:rw"]
+map: 
+  - config:rw
 usb: true
+udev: true
+devices:
+  - /dev/bus/usb
+init: false
 options:
-  RTLAMR_MSGTYPE: r900
+  RTLAMR_MSGTYPE: "r900"
   RTLAMR_CENTERFREQ: 917000000
-  COLLECT_INFLUXDB_HOSTNAME: http://a0d7b954-influxdb:8086/
-  COLLECT_INFLUXDB_DATABASE: rtlamr
-  COLLECT_INFLUXDB_TOKEN: rtlamr:rtlamr
-  COLLECT_INFLUXDB_ORG: doesnotmeananything
-  COLLECT_INFLUXDB_BUCKET: rtlamr
-  COLLECT_INFLUXDB_MEASUREMENT: rtlamr
+  COLLECT_INFLUXDB_HOSTNAME: "http://a0d7b954-influxdb:8086/"
+  COLLECT_INFLUXDB_DATABASE: "rtlamr"
+  COLLECT_INFLUXDB_TOKEN: "rtlamr:rtlamr"
+  COLLECT_INFLUXDB_ORG: "doesnotmeananything"
+  COLLECT_INFLUXDB_BUCKET: "rtlamr"
+  COLLECT_INFLUXDB_MEASUREMENT: "rtlamr"
   COLLECT_STRICTIDM: 1
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
